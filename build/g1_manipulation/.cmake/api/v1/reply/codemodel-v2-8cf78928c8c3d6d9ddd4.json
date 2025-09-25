@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-ba597e83ab8e47de4fa9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "g1_manipulation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_g1_manipulation_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_g1_manipulation_egg-7e8e5302b7b547931676.json",
+					"name" : "ament_cmake_python_build_g1_manipulation_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_g1_manipulation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_g1_manipulation-f42a6ec9cceee7a2b2af.json",
+					"name" : "ament_cmake_python_copy_g1_manipulation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "g1_manipulation_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-g1_manipulation_uninstall-740325e46c1bb47df08c.json",
+					"name" : "g1_manipulation_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-a6b4ab4a3128546a2a87.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wave_right_arm::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wave_right_arm-5cb0d8bd261fb8875103.json",
+					"name" : "wave_right_arm",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yhs/ros2_ws/build/g1_manipulation",
+		"source" : "/home/yhs/ros2_ws/src/g1_manipulation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

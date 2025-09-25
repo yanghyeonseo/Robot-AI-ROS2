@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!-- 
+=============================================================================
+ROS2 Package Manifest: Package Metadata and Dependency Declaration
+=============================================================================
+
+This package.xml file demonstrates:
+1. ROS2 package metadata specification
+2. Dependency management and categorization
+3. Build system configuration
+4. Package versioning and licensing
+5. Maintainer and description information
+
+Educational Topics Covered:
+- XML package format and structure
+- Dependency types (build, runtime, test)
+- Mixed Python/C++ package configuration
+- Package metadata best practices
+- Build system selection and configuration
+
+Key Concepts:
+- buildtool_depend: Tools needed to build the package
+- depend: Libraries needed for both building and runtime
+- exec_depend: Runtime-only dependencies
+- test_depend: Testing and code quality tools
+- export: Build system and package type specification
+
+Dependency Management:
+- All dependencies must be available in the ROS2 environment
+- Dependency versions are managed by the ROS2 distribution
+- Missing dependencies will cause build or runtime failures
+=============================================================================
+-->
+
+<!-- XML Schema Declaration -->
+<!-- Validates the package.xml structure against ROS2 standards -->
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypeset="xml"?>
+
+<!-- Package Declaration with Format Version -->
+<!-- format="3" uses the latest ROS2 package.xml specification -->
+<package format="3">
+
+  <!-- =================================================================== -->
+  <!-- PACKAGE IDENTIFICATION -->
+  <!-- =================================================================== -->
+  
+  <!-- Package Name (must match CMakeLists.txt project name) -->
+  <!-- Used by: ros2 run, ros2 launch, colcon build, package managers -->
+  <name>g1_manipulation</name>
+  
+  <!-- Package Version (semantic versioning: major.minor.patch) -->
+  <!-- Update when making changes: 0.0.0 → 0.1.0 → 1.0.0 -->
+  <version>0.0.0</version>
+  
+  <!-- Package Description (appears in package lists and documentation) -->
+  <!-- Should be a clear, concise explanation of package functionality -->
+  <description>
+    ROS2 package for G1 humanoid robot manipulation and control.
+    Demonstrates joint state publishing, motion generation, and robot visualization.
+    Includes both Python and C++ implementations for educational purposes.
+  </description>
+  
+  <!-- Package Maintainer (contact information for support/issues) -->
+  <!-- Multiple maintainers can be specified with additional tags -->
+  <maintainer email="gogi05@snu.ac.kr">roy</maintainer>
+  
+  <!-- Software License (legal terms for package usage and distribution) -->
+  <!-- Common options: MIT, Apache-2.0, BSD-3-Clause, GPL-3.0 -->
+  <license>MIT</license>
+
+  <!-- =================================================================== -->
+  <!-- BUILD SYSTEM DEPENDENCIES -->
+  <!-- =================================================================== -->
+  <!-- Tools required to build this package from source code -->
+  
+  <!-- Core ROS2 CMake build system -->
+  <!-- Provides ament_cmake macros and build infrastructure -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <!-- Python integration for mixed-language packages -->
+  <!-- Enables Python package installation alongside C++ -->
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <!-- =================================================================== -->
+  <!-- RUNTIME AND BUILD DEPENDENCIES -->
+  <!-- =================================================================== -->
+  <!-- Libraries needed for both compilation and execution -->
+  
+  <!-- ROS2 Python Client Library -->
+  <!-- Required for: Python nodes, publishers, subscribers, services -->
+  <depend>rclpy</depend>
+  
+  <!-- ROS2 C++ Client Library -->
+  <!-- Required for: C++ nodes, publishers, subscribers, timers -->
+  <depend>rclcpp</depend>
+  
+  <!-- Standard Sensor Message Definitions -->
+  <!-- Provides: JointState, LaserScan, Image, PointCloud2, etc. -->
+  <depend>sensor_msgs</depend>
+
+  <!-- =================================================================== -->
+  <!-- RUNTIME-ONLY DEPENDENCIES -->
+  <!-- =================================================================== -->
+  <!-- Packages needed to run nodes but not to build them -->
+  
+  <!-- Joint State Publisher (publishes default joint positions) -->
+  <!-- Used by: launch files for robot visualization -->
+  <exec_depend>joint_state_publisher</exec_depend>
+  
+  <!-- Joint State Publisher GUI (interactive joint control sliders) -->
+  <!-- Used by: manual robot pose adjustment and testing -->
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  
+  <!-- Robot State Publisher (publishes TF transforms from URDF) -->
+  <!-- Used by: robot visualization and coordinate frame management -->
+  <exec_depend>robot_state_publisher</exec_depend>
+  
+  <!-- RViz2 Visualization Tool -->
+  <!-- Used by: 3D robot visualization and sensor data display -->
+  <exec_depend>rviz2</exec_depend>
+
+  <!-- =================================================================== -->
+  <!-- TESTING AND DEVELOPMENT DEPENDENCIES -->
+  <!-- =================================================================== -->
+  <!-- Tools needed for testing, linting, and code quality -->
+  
+  <!-- Automatic Linting Framework -->
+  <!-- Finds and runs all available code quality tools -->
+  <test_depend>ament_lint_auto</test_depend>
+  
+  <!-- Common Linting Tools Collection -->
+  <!-- Includes: cpplint, flake8, xmllint, and other standard linters -->
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- =================================================================== -->
+  <!-- PACKAGE EXPORT CONFIGURATION -->
+  <!-- =================================================================== -->
+  <!-- Metadata about the package build system and capabilities -->
+  
+  <export>
+    <!-- Build System Type Declaration -->
+    <!-- Tells colcon and other tools how to build this package -->
+    <!-- Options: ament_cmake, ament_python, cmake -->
+    <build_type>ament_cmake</build_type>
+    
+    <!-- Additional export tags can be added here for: -->
+    <!-- - Plugin declarations -->
+    <!-- - Message/service generation -->
+    <!-- - Custom build configurations -->
+  </export>
+  
+</package>

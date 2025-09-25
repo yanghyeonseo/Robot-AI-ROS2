@@ -1,0 +1,7 @@
+setup.py
+g1_manipulation/__init__.py
+g1_manipulation/wave_left_arm.py
+g1_manipulation.egg-info/PKG-INFO
+g1_manipulation.egg-info/SOURCES.txt
+g1_manipulation.egg-info/dependency_links.txt
+g1_manipulation.egg-info/top_level.txt

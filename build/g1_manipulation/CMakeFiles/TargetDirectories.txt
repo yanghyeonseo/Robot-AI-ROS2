@@ -1,0 +1,12 @@
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/uninstall.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/g1_manipulation_uninstall.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/ament_cmake_python_copy_g1_manipulation.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/ament_cmake_python_build_g1_manipulation_egg.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/wave_right_arm.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/test.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/edit_cache.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/rebuild_cache.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/list_install_components.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/install.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/install/local.dir
+/home/yhs/ros2_ws/build/g1_manipulation/CMakeFiles/install/strip.dir
