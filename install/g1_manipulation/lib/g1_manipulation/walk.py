@@ -31,7 +31,7 @@ class JointStatePublisher(Node):
     ==========================================
     
     This class inherits from rclpy.Node and creates a publisher that sends
-    joint position commands to make the robot's left arm wave.
+    joint position commands to make the robot's leg wave.
     
     Key Concepts:
     - Node inheritance: Extends rclpy.Node for ROS2 functionality
@@ -182,7 +182,7 @@ class JointStatePublisher(Node):
         # =============================================================
         
         # Motion parameters
-        wave_amplitude = 1.0                                    # Maximum angle in radians (~28.6 degrees)
+        wave_amplitude = 1.0                                   # Maximum angle in radians
         wave_frequency = 2.0 * math.pi / self.wave_period      # Angular frequency (rad/s)
         
         # Calculate primary wave position using sine function
@@ -201,8 +201,14 @@ class JointStatePublisher(Node):
         # Knee
         # Index 3: left_knee_joint
         # Index 9: right_knee_joint
-        msg.position[3] = 0.3 + 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 3)
-        msg.position[9] = 0.3 - 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 3)
+        msg.position[3] = 0.3 + 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 2)
+        msg.position[9] = 0.3 - 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 2)
+        
+        # Ankle
+        # Index 4: left_ankle_pitch_joint
+        # Index 10: right_ankle_pitch_joint
+        msg.position[4]  = 0.2 * math.sin(wave_frequency * self.time_elapsed - math.pi / 2)
+        msg.position[10] = 0.2 * math.sin(wave_frequency * self.time_elapsed - math.pi / 2)
         
         # Shoulder pitch
         # Index 13: left_shoulder_pitch_joint
