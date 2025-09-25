@@ -182,7 +182,7 @@ class JointStatePublisher(Node):
         # =============================================================
         
         # Motion parameters
-        wave_amplitude = 0.5                                    # Maximum angle in radians (~28.6 degrees)
+        wave_amplitude = 1.0                                    # Maximum angle in radians (~28.6 degrees)
         wave_frequency = 2.0 * math.pi / self.wave_period      # Angular frequency (rad/s)
         
         # Calculate primary wave position using sine function
@@ -195,26 +195,26 @@ class JointStatePublisher(Node):
         # Hip pitch
         # Index 0: left_hip_pitch_joint
         # Index 6: right_hip_pitch_joint
-        msg.position[0] = wave_position
-        msg.position[6] = -wave_position
+        msg.position[0] = +0.25 * wave_position
+        msg.position[6] = -0.25 * wave_position
 
         # Knee
         # Index 3: left_knee_joint
         # Index 9: right_knee_joint
-        msg.position[3] = -0.5 * wave_position
-        msg.position[9] = 0.5 * wave_position
+        msg.position[3] = 0.3 + 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 3)
+        msg.position[9] = 0.3 - 0.25 * math.sin(wave_frequency * self.time_elapsed - math.pi / 3)
         
         # Shoulder pitch
         # Index 13: left_shoulder_pitch_joint
         # Index 23: right_shoulder_pitch_joint
-        msg.position[13] = -0.5 * wave_position
-        msg.position[23] = 0.5 * wave_position
+        msg.position[13] = -0.4 * wave_position
+        msg.position[23] = +0.4 * wave_position
         
         # Elbow
         # Index 16: left_elbow_joint
         # Index 26: right_elbow_joint
-        msg.position[16] = -0.2 * wave_position
-        msg.position[26] = 0.2 * wave_position
+        msg.position[16] = 1.3 - 0.1 * wave_position
+        msg.position[26] = 1.3 + 0.1 * wave_position
 
         # JointState message can include velocity and effort, but we leave empty
         # Empty arrays tell the robot to ignore velocity/force control
